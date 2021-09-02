@@ -79,7 +79,13 @@ def frac_preprocessing(frac_data_raw, char_len_vec, output_dir, filename_base, h
     act_frac_sys_raw = np.array(act_frac_sys, copy=True)
 
     # Perform loop for all characteristic lengths:
-    for jj, char_len in enumerate(char_len_vec):
+    if type(char_len_vec) is int:
+        char_len_vec = [char_len_vec]
+    if type(char_len_vec) == np.ndarray:
+        if char_len_vec.size == 1:
+            char_len_vec = [int(char_len_vec)]
+
+    for char_len in char_len_vec:
         print('START main cleaning loop for l_f={:}'.format(char_len))
         print('\tNOTE: unoptimized!, can take long for very large networks or very small l_f')
 
@@ -134,6 +140,7 @@ def frac_preprocessing(frac_data_raw, char_len_vec, output_dir, filename_base, h
 
         if mesh_clean:
             print('START meshing cleaned network')
+            print('\tNOTE: In gmsh you need to have under Options -> Geometry -> General -> uncheck "Remove duplicate ..." otherwise meshing will crash/take too long')
             mesh_geo_file(filename_geo_cln, filename_out_cln)
             print('DONE meshing cleaned network\n')
 
@@ -158,6 +165,7 @@ def frac_preprocessing(frac_data_raw, char_len_vec, output_dir, filename_base, h
         if mesh_raw:
             print('START meshing raw network')
             print('\tNOTE: unoptimized!, can take long for very large raw networks')
+            print('\tNOTE: In gmsh you need to have under Options -> Geometry -> General -> uncheck "Remove duplicate ..." otherwise meshing will crash/take too long')
             mesh_geo_file(filename_geo_raw, filename_out_raw)
             print('DONE meshing raw network\n')
 
