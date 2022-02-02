@@ -8,4 +8,4 @@ If you want to preprocess your fracture network, make sure it is in the format:
 
 In order to perform meshing you need to have gmsh installed and it must be recognized as an environment variable (i.e., you must be able to call it from the command line with "gmsh").
 
-Only numpy and scipy (and gmsh for meshing) are required to run this preprocessing tool.
+Only numpy, scipy, matplotlib, and igraph (and gmsh for meshing) are required to run this preprocessing tool.
