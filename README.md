@@ -1,5 +1,5 @@
 # Fracture-Preprocessing-Code
-Open-source preprocessing tool that can create, at the required level of accuracy, a fully conformal uniformly distributed grid for a given realistic fracture network. This leads to a robust way of constructing a hierarchy of Discrete-Fracture-Models for uncertainty quantification of energy production from reservoirs with natural fracture networks. Preprint of the paper related to this code can be found at:  https://doi.org/10.1002/essoar.10507519.3
+Open-source preprocessing tool that can create, at the required level of accuracy, a fully conformal uniformly distributed grid for a given realistic fracture network. This leads to a robust way of constructing a hierarchy of Discrete-Fracture-Models for uncertainty quantification of energy production from reservoirs with natural fracture networks. Preprint of the paper related to this code can be found at: https://doi.org/10.1029/2021WR030743 .
 
 An example of how to run the code is given in main.py 
 
