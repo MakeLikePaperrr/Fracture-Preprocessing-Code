@@ -239,7 +239,7 @@ def frac_preprocessing(frac_data_raw, char_len, output_dir='', filename_base='ou
     f.close()
 
     filename_aper_raw = os.path.join(output_dir, filename_base + '_raw_lc_' + str(char_len) + '_aperture.txt')
-    f = open(filename_aper_clean, "w+")
+    f = open(filename_aper_raw, "w+")
     for aper in apertures_raw:
         f.write('{:16.15f} \n'.format(aper))
     f.close()
@@ -249,7 +249,7 @@ def frac_preprocessing(frac_data_raw, char_len, output_dir='', filename_base='ou
     create_geo_file(act_frac_sys=act_frac_sys_raw, filename=filename_geo_raw, decimals=decimals,
                     height_res=height_res, char_len=char_len * char_len_mult, box_data=box_data,
                     char_len_boundary=char_len_boundary * char_len_mult)
-    print('DONE creating geo-file for cleaned network (input for gmsh)\n')
+    print('DONE creating geo-file for raw network (input for gmsh)\n')
 
     if mesh_raw:
         print('START meshing raw network')
